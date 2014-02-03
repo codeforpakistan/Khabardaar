@@ -28,11 +28,11 @@ namespace PDMA_Emergency
 
         protected void submitt_btn_Click(object sender, EventArgs e)
         {
-            string num = "1234";
+            string num = "1234";//number getting from db
             if (username_tbx.Text=="pdma"&&pass_tbx.Text=="pdma")
             {
                 var client = new RestClient("http://www.pringit.com");
-                var request = new RestRequest("api/?username=PDMA&action=PM&message=" + num + "&keyword=pdma12&secret=1957d4cff8f0df86ee9067d0470cb4ff&v=1&mobile=03066483867&fullmsg=1", Method.POST);
+                var request = new RestRequest("api/?username=Pringusername&action=PM&message=" + num + "&keyword=pdma12&secret=PRingSecretkey&v=1&mobile=03066483867&fullmsg=1", Method.POST);
                 //var request = new RestRequest("api?username=PDMA&action=UPDATE&message="+pd.Message+"&secret="+pd.Secretkey+"&v=1/", Method.POST);
                 var response = client.Execute(request);
                 Response.Redirect("verify.aspx");

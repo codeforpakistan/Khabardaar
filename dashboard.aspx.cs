@@ -23,24 +23,24 @@ namespace PDMA_Emergency
             string description = description_tbx.Text;
             string status = DropDownList1.SelectedItem.Text;
             var client = new RestClient("http://www.pringit.com");
-            var request = new RestRequest("api?username=PDMA&action=UPDATE&message=" + title + n + description + n + status + "&secret=1957d4cff8f0df86ee9067d0470cb4ff&v=1", Method.POST);
+            var request = new RestRequest("api?username=username&action=UPDATE&message=" + title + n + description + n + status + "&secret=secretkey&v=1", Method.POST);
             
             var response = client.Execute(request);
             if (CheckBox1.Checked==true)
             {//peshawar
-                var request1 = new RestRequest("api?username=PDMA&action=UPDATE&message=" + title + n + description + n + status + "&secret=1957d4cff8f0df86ee9067d0470cb4ff&v=1", Method.POST);
+                var request1 = new RestRequest("api?username=PDMA&action=UPDATE&message=" + title + n + description + n + status + "&secret=secretkey&v=1", Method.POST);
                 
                 var response1 = client.Execute(request);
             }
             else if (CheckBox2.Checked==true)
             {//nowshera
-                var request2 = new RestRequest("api?username=PDMANOW&action=UPDATE&message=" + title + n + description + n + status + "&secret=039b62cd95835fb05447b0c13bc8d7f1&v=1", Method.POST);
+                var request2 = new RestRequest("api?username=PDMANOW&action=UPDATE&message=" + title + n + description + n + status + "&secret=secretkey&v=1", Method.POST);
                 
                 var response2 = client.Execute(request);
             }
             else if (CheckBox3.Checked==true)
             {//hazara
-                var request3 = new RestRequest("api?username=PDMAHAZ&action=UPDATE&message=" + title + n + description + n + status + "&secret=0a7f5d3588b6ee0891182a9904c8305c&v=1", Method.POST);
+                var request3 = new RestRequest("api?username=PDMAHAZ&action=UPDATE&message=" + title + n + description + n + status + "&secret=secretkey&v=1", Method.POST);
 
                 var response3 = client.Execute(request);
             }
@@ -63,7 +63,7 @@ namespace PDMA_Emergency
 
             SmtpClient cl = new SmtpClient();
 
-            cl.Credentials = new System.Net.NetworkCredential(mail_from, "352010203576");
+            cl.Credentials = new System.Net.NetworkCredential(mail_from, "pass");
             cl.Port = 587; // gmail uses this port
             cl.Host = "smtp.gmail.com";
             cl.EnableSsl = true;
